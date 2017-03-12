@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="72dp"
+            android:height="72dp"
+            android:viewportHeight="72"
+            android:viewportWidth="72"
+
+            app:vc_viewportHeight="72"
+            app:vc_viewportWidth="72">
+            <group
+                android:name="rotationGroup"
+                android:pivotX="36.0"
+                android:pivotY="36.0"
+                android:rotation="0.0">
+                <path
+                    android:name="v"
+                    android:fillColor="#000000"
+                    android:pathData="@string/eavd_path_stop"
+
+                    app:vc_fillColor="#000000"
+                    app:vc_pathData="@string/eavd_path_stop"/>
+            </group>
+        </vector>
+    </aapt:attr>
+
+    <target android:name="rotationGroup">
+        <aapt:attr name="android:animation">
+            <set xmlns:android="http://schemas.android.com/apk/res/android">
+                <objectAnimator
+                    android:duration="150"
+                    android:propertyName="scaleX"
+                    android:repeatCount="1"
+                    android:repeatMode="reverse"
+                    android:startOffset="150"
+                    android:valueFrom="1.0"
+                    android:valueTo="1.05"/>
+                <objectAnimator
+                    android:duration="150"
+                    android:propertyName="scaleY"
+                    android:repeatCount="1"
+                    android:repeatMode="reverse"
+                    android:startOffset="0"
+                    android:valueFrom="1.0"
+                    android:valueTo="1.05"/>
+            </set>
+        </aapt:attr>
+    </target>
+
+    <target android:name="v">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="200"
+                android:propertyName="pathData"
+                android:valueFrom="@string/eavd_path_stop"
+                android:valueTo="@string/eavd_path_pause"
+                android:valueType="pathType"
+
+                app:vc_valueType="pathType"/>
+        </aapt:attr>
+    </target>
+
+</animated-vector>
