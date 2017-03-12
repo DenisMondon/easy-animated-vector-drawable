@@ -41,8 +41,8 @@ Here is the list of all currently supported types:
 CUSTOMIZATION
 -------------
 
-*The included drawable types are not useful for your app?*
-You can use **your own animated vector drawables** like this:
+*The included drawable types are not useful for your app?*  
+You can use **your own animated vector drawables** like this:  
 **COMING SOON**
 
 License
