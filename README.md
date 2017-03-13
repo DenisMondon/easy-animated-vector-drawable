@@ -1,6 +1,10 @@
 Easy Animated Vector Drawable
 ============
 
+Demo
+----
+
+![alt text](https://github.com/DenisMondon/EasyAnimatedVectorDrawable/blob/master/images/demo.gif "Demo gif")
 
 
 Download
