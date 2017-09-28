@@ -64,7 +64,7 @@ public class EasyAnimatedVectorDrawable {
             Log.e(TAG, "The drawable for the " + type.name() + " type is not valid");
             return;
         }
-        Drawable drawable = ResourcesCompat.getDrawable(imageView.getContext(), drawableResId);
+        Drawable drawable = ResourcesCompat.getDrawable(imageView.getContext(), drawableResId).mutate();
         if (tintColor != 0) {
             drawable.setColorFilter(tintColor, PorterDuff.Mode.SRC_IN);
         }

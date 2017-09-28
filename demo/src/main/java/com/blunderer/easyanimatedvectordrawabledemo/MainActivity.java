@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button playButton = (Button) findViewById(R.id.activity_main_play_button);
-        Button pauseButton = (Button) findViewById(R.id.activity_main_pause_button);
-        Button stopButton = (Button) findViewById(R.id.activity_main_stop_button);
+        Button playButton = findViewById(R.id.activity_main_play_button);
+        Button pauseButton = findViewById(R.id.activity_main_pause_button);
+        Button stopButton = findViewById(R.id.activity_main_stop_button);
 
-        final AppCompatImageView imageView = (AppCompatImageView) findViewById(R.id.activity_main_imageview);
+        final AppCompatImageView imageView = findViewById(R.id.activity_main_imageview);
 
         playButton.setOnClickListener(new View.OnClickListener() {
 
