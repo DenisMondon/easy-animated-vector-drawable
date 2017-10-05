@@ -3,6 +3,7 @@ package com.blunderer.easyanimatedvectordrawable;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -64,7 +65,10 @@ public class EasyAnimatedVectorDrawable {
             Log.e(TAG, "The drawable for the " + type.name() + " type is not valid");
             return;
         }
-        Drawable drawable = ResourcesCompat.getDrawable(imageView.getContext(), drawableResId).mutate();
+        Drawable drawable = ResourcesCompat.getDrawable(imageView.getContext(), drawableResId);
+        if (Build.VERSION.SDK_INT != Build.VERSION_CODES.M) {
+            drawable = drawable.mutate();
+        }
         if (tintColor != 0) {
             drawable.setColorFilter(tintColor, PorterDuff.Mode.SRC_IN);
         }
