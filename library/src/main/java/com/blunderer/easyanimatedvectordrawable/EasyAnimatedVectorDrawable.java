@@ -66,6 +66,10 @@ public class EasyAnimatedVectorDrawable {
             return;
         }
         Drawable drawable = ResourcesCompat.getDrawable(imageView.getContext(), drawableResId);
+        if (drawable == null) {
+            Log.e(TAG, "The drawable with id " + drawableResId + " is null");
+            return;
+        }
         if (Build.VERSION.SDK_INT != Build.VERSION_CODES.M) {
             drawable = drawable.mutate();
         }
