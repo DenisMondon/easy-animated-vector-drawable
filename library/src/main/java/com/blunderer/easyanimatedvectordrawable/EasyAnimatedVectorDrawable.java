@@ -42,7 +42,9 @@ public class EasyAnimatedVectorDrawable {
         }
 
         final Enum<?> currentType = (Enum<?>) imageView.getTag(R.id.eavd_current_type);
-        if (currentType == type) {
+        final Object currentTintColorObject = imageView.getTag(R.id.eavd_current_tint_color);
+        final int currentTintColor = currentTintColorObject == null ? 0 : (int) currentTintColorObject;
+        if (currentType == type && currentTintColor == tintColor) {
             // Both types are equals, do nothing.
             return;
         }
@@ -79,6 +81,7 @@ public class EasyAnimatedVectorDrawable {
 
         imageView.setImageDrawable(drawable);
         imageView.setTag(R.id.eavd_current_type, type);
+        imageView.setTag(R.id.eavd_current_tint_color, tintColor);
 
         if (drawable instanceof Animatable) {
             Animatable animatable = (Animatable) drawable;

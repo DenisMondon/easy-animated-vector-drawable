@@ -2,5 +2,6 @@
 <resources>
 
     <item name="eavd_current_type" type="id"/>
+    <item name="eavd_current_tint_color" type="id"/>
 
 </resources>
