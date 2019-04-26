@@ -5,4 +5,9 @@
     <string name="action_pause">Pause</string>
     <string name="action_stop">Stop</string>
 
+    <string name="action_left_arrow">Left arrow</string>
+    <string name="action_up_arrow">Up arrow</string>
+    <string name="action_right_arrow">Right arrow</string>
+    <string name="action_down_arrow">Down arrow</string>
+
 </resources>

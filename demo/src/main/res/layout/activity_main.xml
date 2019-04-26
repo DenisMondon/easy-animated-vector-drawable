@@ -6,6 +6,43 @@
     android:layout_height="match_parent"
     tools:context="com.blunderer.easyanimatedvectordrawabledemo.MainActivity">
 
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_main_left_arrow_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/action_left_arrow"
+        app:layout_constraintEnd_toStartOf="@+id/activity_main_up_arrow_button"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_main_up_arrow_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/action_up_arrow"
+        app:layout_constraintEnd_toStartOf="@+id/activity_main_right_arrow_button"
+        app:layout_constraintStart_toEndOf="@id/activity_main_left_arrow_button"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_main_right_arrow_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/action_right_arrow"
+        app:layout_constraintEnd_toStartOf="@+id/activity_main_down_arrow_button"
+        app:layout_constraintStart_toEndOf="@id/activity_main_up_arrow_button"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_main_down_arrow_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/action_down_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/activity_main_right_arrow_button"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/activity_main_imageview"
         android:layout_width="200dp"
@@ -14,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="#CCCCCC" />
+        tools:srcCompat="@drawable/eavd_vd_play"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/activity_main_play_button"
@@ -24,7 +61,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/activity_main_pause_button"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/activity_main_pause_button"
@@ -33,7 +70,7 @@
         android:text="@string/action_pause"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/activity_main_stop_button"
-        app:layout_constraintStart_toEndOf="@id/activity_main_play_button" />
+        app:layout_constraintStart_toEndOf="@id/activity_main_play_button"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/activity_main_stop_button"
@@ -42,6 +79,6 @@
         android:text="@string/action_stop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/activity_main_pause_button" />
+        app:layout_constraintStart_toEndOf="@id/activity_main_pause_button"/>
 
 </android.support.constraint.ConstraintLayout>
