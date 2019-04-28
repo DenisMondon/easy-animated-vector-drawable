@@ -12,7 +12,7 @@ Download
 
 ```groovy
 dependencies {
-    compile 'com.blunderer:easy-animated-vector-drawable:1.0.4'
+    implementation 'com.blunderer:easy-animated-vector-drawable:1.0.5'
 }
 ```
 
