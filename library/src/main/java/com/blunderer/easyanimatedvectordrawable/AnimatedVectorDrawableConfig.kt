@@ -1,6 +1,6 @@
 package com.blunderer.easyanimatedvectordrawable
 
-import android.support.annotation.DrawableRes
+import androidx.annotation.DrawableRes
 
 class AnimatedVectorDrawableConfig private constructor(builder: Builder) {
 

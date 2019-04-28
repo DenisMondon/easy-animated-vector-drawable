@@ -20,19 +20,28 @@ dependencies {
 How to use it
 -------------
 
-Simply call setImageType() with your ImageView and the type of the drawable:
-```java
+Simply call setImageType() on any ImageView and give it the type of the drawable:
+```kotlin
     ImageView imageView = (ImageView) findViewById(R.id.image_view);
 
+    // Kotlin
+    imageView.setImageType(EasyAnimatedVectorDrawable.Type.PLAY)
+    // Java
     EasyAnimatedVectorDrawable.setImageType(imageView, EasyAnimatedVectorDrawable.Type.PLAY);
 ```
 
-If you want to change the color of the drawable, just do this:
-```java
+If you want to change the color of the drawable, just give also the color:
+```kotlin
+    // Kotlin
+    imageView.setImageType(EasyAnimatedVectorDrawable.Type.PLAY, Color.RED)
+    // Java
     EasyAnimatedVectorDrawable.setImageType(imageView, EasyAnimatedVectorDrawable.Type.PLAY, Color.RED);
 ```
 or
-```java
+```kotlin
+    // Kotlin
+    imageView.setImageType(EasyAnimatedVectorDrawable.Type.PLAY, ContextCompat.getColor(context, R.color.red))
+    // Java
     EasyAnimatedVectorDrawable.setImageType(imageView, EasyAnimatedVectorDrawable.Type.PLAY, ContextCompat.getColor(context, R.color.red));
 ```
 
@@ -41,6 +50,10 @@ Here is the list of all currently supported types:
 - PAUSE
 - STOP
 
+- LEFT_ARROW
+- UP_ARROW
+- RIGHT_ARROW
+- DOWN_ARROW
 
 CUSTOMIZATION
 -------------
@@ -52,7 +65,7 @@ You can use **your own animated vector drawables** like this:
 License
 -------
 
-    Copyright 2017 Denis Mondon
+    Copyright 2019 Denis Mondon
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

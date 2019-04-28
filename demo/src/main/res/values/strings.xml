@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">EasyAnimatedVectorDrawable</string>
+
     <string name="action_play">Play</string>
     <string name="action_pause">Pause</string>
     <string name="action_stop">Stop</string>

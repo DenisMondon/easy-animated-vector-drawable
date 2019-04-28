@@ -3,10 +3,10 @@ package com.blunderer.easyanimatedvectordrawable
 import android.graphics.PorterDuff
 import android.graphics.drawable.Animatable
 import android.os.Build
-import android.support.annotation.ColorInt
-import android.support.annotation.DrawableRes
 import android.util.Log
 import android.widget.ImageView
+import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
 import com.wnafee.vector.compat.ResourcesCompat
 
 object EasyAnimatedVectorDrawable {
@@ -15,33 +15,37 @@ object EasyAnimatedVectorDrawable {
 
     var config: AnimatedVectorDrawableConfig? = null
 
+    @JvmStatic
     @JvmOverloads
     fun setImageType(imageView: ImageView, type: Enum<*>, @ColorInt tintColor: Int = 0) {
         val currentTypeTag = imageView.getTag(R.id.eavd_current_type)
         if (currentTypeTag !is Enum<*>) {
+            // If the image has no types, we set it.
             setImageDrawable(imageView, getDefaultDrawableResId(type), type, tintColor)
             return
         }
 
-        val currentTintColorObject = imageView.getTag(R.id.eavd_current_tint_color)
-        val currentTintColor = if (currentTintColorObject !is Int) 0 else currentTintColorObject
+        val currentTintColor = imageView.getTag(R.id.eavd_current_tint_color)?.takeIf { it is Int } as? Int ?: 0
         if (currentTypeTag == type && currentTintColor == tintColor) {
-            // Both types are equals, do nothing.
+            // Both types are equals, we do nothing.
             return
         }
 
+        val newTintColor = tintColor.takeIf { it != 0 } ?: currentTintColor
         val animatedVectorDrawable = getAnimatedVectorDrawable(currentTypeTag, type) ?: 0
         if (animatedVectorDrawable != 0) {
-            setImageDrawable(imageView, animatedVectorDrawable, type, tintColor)
+            // We animate the new one from the one already set.
+            setImageDrawable(imageView, animatedVectorDrawable, type, newTintColor)
             return
         }
 
-        setImageDrawable(imageView, getDefaultDrawableResId(type), type, tintColor)
+        // Else, we just set the type without animation.
+        setImageDrawable(imageView, getDefaultDrawableResId(type), type, newTintColor)
     }
 
     private fun setImageDrawable(imageView: ImageView, @DrawableRes drawableResId: Int, type: Enum<*>, @ColorInt tintColor: Int) {
         if (drawableResId == 0) {
-            Log.e(TAG, "The drawable for the " + type.name + " type is not valid")
+            Log.e(TAG, "The drawable for the type \"" + type.name + "\" is not valid")
             return
         }
         var drawable = ResourcesCompat.getDrawable(imageView.context, drawableResId) ?: return
@@ -50,11 +54,11 @@ object EasyAnimatedVectorDrawable {
         }
         if (tintColor != 0) {
             drawable.setColorFilter(tintColor, PorterDuff.Mode.SRC_IN)
+            imageView.setTag(R.id.eavd_current_tint_color, tintColor)
         }
 
         imageView.setImageDrawable(drawable)
         imageView.setTag(R.id.eavd_current_type, type)
-        imageView.setTag(R.id.eavd_current_tint_color, tintColor)
 
         if (drawable is Animatable) {
             with(drawable as Animatable) {
