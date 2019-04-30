@@ -4,7 +4,8 @@ Easy Animated Vector Drawable
 Demo
 ----
 
-![alt text](https://github.com/DenisMondon/EasyAnimatedVectorDrawable/blob/master/images/demo.gif "Demo gif")
+![alt text](https://github.com/DenisMondon/EasyAnimatedVectorDrawable/blob/master/images/demo_playpausestop.gif "Demo gif")
+![alt text](https://github.com/DenisMondon/EasyAnimatedVectorDrawable/blob/master/images/demo_arrows.gif "Demo gif")
 
 
 Download
